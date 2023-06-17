@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import hr.algebra.fakestoreapp.databinding.ActivityMainBinding
 import hr.algebra.fakestoreapp.fragment.AboutFragment
 import hr.algebra.fakestoreapp.fragment.ShopItems
+import hr.algebra.fakestoreapp.framework.startActivity
 
 class MainHostActivity : AppCompatActivity() {
     private lateinit var binding:ActivityMainBinding
@@ -18,6 +19,7 @@ class MainHostActivity : AppCompatActivity() {
             when(it.itemId){
             R.id.shopAbout->replaceFragment(AboutFragment())
                 R.id.shopItems->replaceFragment(ShopItems())
+                R.id.shopMap-> startActivity<MapsActivity>()
             }
             true
         }

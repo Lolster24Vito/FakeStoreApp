@@ -2,5 +2,8 @@
     <string name="app_name">FakeStoreApp</string>
     <string name="please_wait">Please wait for Fake Store to load</string>
     <string name="no_internet">No internet try when you have internet</string>
+    <string name="nav_map">Map</string>
+    <string name="nav_about">About</string>
+    <string name="nav_shop_items">Shop items</string>
     <!-- TODO: Remove or change this placeholder text -->
 </resources>

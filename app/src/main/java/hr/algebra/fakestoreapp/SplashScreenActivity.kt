@@ -31,7 +31,9 @@ class SplashScreenActivity : AppCompatActivity() {
 
         } else {
             if (isOnline()) {
-             //   NasaService.enqueue(this)
+                //remove this
+                startActivity<MainHostActivity>()
+                //   NasaService.enqueue(this)
             } else {
                 binding.tvSplash.text = getString(R.string.no_internet)
                 callDelayed(DELAY) { finish() }

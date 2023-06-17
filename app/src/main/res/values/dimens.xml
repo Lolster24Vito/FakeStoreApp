@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="splashIvHeight">400dp</dimen>
+    <dimen name="splashTextSize">30dp</dimen>
+    <dimen name="aboutPadding">20dp</dimen>
+</resources>

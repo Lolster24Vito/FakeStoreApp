@@ -47,7 +47,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+        <provider
+            android:name=".FakeStoreProvider"
+            android:authorities="hr.algebra.fakestoreapp.api.provider"
+            android:enabled="true"
+            android:exported="false" />
 
     </application>
 

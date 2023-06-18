@@ -8,7 +8,7 @@ import hr.algebra.fakestoreapp.framework.*
 class FakeStoreReceiver : BroadcastReceiver() {
 
     override fun onReceive(context: Context, intent: Intent) {
-        //context.setBooleanPreference(DATA_IMPORTED)
+        context.setBooleanPreference(DATA_IMPORTED)
         context.startActivity<MainHostActivity>()
     }
 }

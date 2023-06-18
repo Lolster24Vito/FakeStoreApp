@@ -13,6 +13,7 @@ import android.view.View
 import android.view.animation.AnimationUtils
 import androidx.core.content.getSystemService
 import androidx.preference.PreferenceManager
+import hr.algebra.fakestoreapp.FAKESTORE_PROVIDER_CONTENT_URI
 import hr.algebra.fakestoreapp.api.ProductItem
 import hr.algebra.fakestoreapp.model.Item
 
@@ -69,18 +70,19 @@ fun callDelayed(delay: Long, runnable: Runnable) {
 }
 
 @SuppressLint("Range")
-fun Context.fetchItems() : MutableList<ProductItem> {
+fun Context.fetchItems() : MutableList<Item> {
         val items = mutableListOf<Item>()
-        val cursor = contentResolver.query(NASA_PROVIDER_CONTENT_URI,
+        val cursor = contentResolver.query(
+                FAKESTORE_PROVIDER_CONTENT_URI,
                 null, null, null, null)
         while (cursor != null && cursor.moveToNext()) {
                 items.add(Item(
                         cursor.getLong(cursor.getColumnIndex(Item::_id.name)),
                         cursor.getString(cursor.getColumnIndex(Item::title.name)),
-                        cursor.getString(cursor.getColumnIndex(Item::explanation.name)),
+                        cursor.getDouble(cursor.getColumnIndex(Item::price.name)),
                         cursor.getString(cursor.getColumnIndex(Item::picturePath.name)),
-                        cursor.getString(cursor.getColumnIndex(Item::date.name)),
-                        cursor.getInt(cursor.getColumnIndex(Item::read.name)) == 1
+                        cursor.getString(cursor.getColumnIndex(Item::description.name)),
+                        cursor.getDouble(cursor.getColumnIndex(Item::rating.name))
                 ))
         }
 

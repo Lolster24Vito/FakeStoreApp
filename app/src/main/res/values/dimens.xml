@@ -3,4 +3,8 @@
     <dimen name="splashIvHeight">400dp</dimen>
     <dimen name="splashTextSize">30dp</dimen>
     <dimen name="aboutPadding">20dp</dimen>
+    <dimen name="itemsPadding">10dp</dimen>
+    <dimen name="ivSize">50dp</dimen>
+    <dimen name="marginLeft">20dp</dimen>
+    <dimen name="tvSize">20sp</dimen>
 </resources>

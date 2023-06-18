@@ -3,9 +3,11 @@ package hr.algebra.fakestoreapp
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
+import com.google.android.gms.maps.MapFragment
 import hr.algebra.fakestoreapp.databinding.ActivityMainBinding
 import hr.algebra.fakestoreapp.fragment.AboutFragment
 import hr.algebra.fakestoreapp.fragment.ShopItems
+import hr.algebra.fakestoreapp.fragment.StoreMapFragment
 import hr.algebra.fakestoreapp.framework.startActivity
 
 class MainHostActivity : AppCompatActivity() {
@@ -19,7 +21,7 @@ class MainHostActivity : AppCompatActivity() {
             when(it.itemId){
             R.id.shopAbout->replaceFragment(AboutFragment())
                 R.id.shopItems->replaceFragment(ShopItems())
-                R.id.shopMap-> startActivity<MapsActivity>()
+                R.id.shopMap-> replaceFragment(StoreMapFragment())
             }
             true
         }

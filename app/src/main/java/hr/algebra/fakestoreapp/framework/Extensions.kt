@@ -13,6 +13,9 @@ import android.view.View
 import android.view.animation.AnimationUtils
 import androidx.core.content.getSystemService
 import androidx.preference.PreferenceManager
+import hr.algebra.fakestoreapp.api.ProductItem
+import hr.algebra.fakestoreapp.model.Item
+
 //import hr.algebra.nasa.NASA_PROVIDER_CONTENT_URI
 //import hr.algebra.nasa.NasaReceiver
 //import hr.algebra.nasa.model.Item
@@ -64,9 +67,9 @@ fun callDelayed(delay: Long, runnable: Runnable) {
                 delay
         )
 }
-/*
+
 @SuppressLint("Range")
-fun Context.fetchItems() : MutableList<Item> {
+fun Context.fetchItems() : MutableList<ProductItem> {
         val items = mutableListOf<Item>()
         val cursor = contentResolver.query(NASA_PROVIDER_CONTENT_URI,
                 null, null, null, null)
@@ -82,4 +85,4 @@ fun Context.fetchItems() : MutableList<Item> {
         }
 
         return items
-}*/
+}

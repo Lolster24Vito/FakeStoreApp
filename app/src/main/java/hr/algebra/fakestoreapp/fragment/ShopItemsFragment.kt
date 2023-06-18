@@ -6,17 +6,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import hr.algebra.fakestoreapp.R
+import hr.algebra.fakestoreapp.api.ProductItem
+import hr.algebra.fakestoreapp.databinding.FragmentShopItemsBinding
+import hr.algebra.fakestoreapp.model.Item
 
 
-
-/**
- * A simple [Fragment] subclass.
- * Use the [ShopItems.newInstance] factory method to
- * create an instance of this fragment.
- */
-class ShopItems : Fragment() {
+class ShopItemsFragment : Fragment() {
     // TODO: Rename and change types of parameters
-
+    private lateinit var  binding:FragmentShopItemsBinding
+    private lateinit var items:MutableList<Item>
 
 
     override fun onCreateView(
@@ -24,7 +22,9 @@ class ShopItems : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_shop_items, container, false)
+      //  items=requireContext().fetchItems()
+        binding= FragmentShopItemsBinding.inflate(inflater,container,false)
+        return binding.root
     }
 
 }

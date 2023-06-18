@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import hr.algebra.fakestoreapp.databinding.ActivitySplashScreenBinding
 import hr.algebra.fakestoreapp.framework.*
+import hr.algebra.fakestoreapp.service.FakeStoreService
 
 private const val DELAY = 3000L
 const val DATA_IMPORTED = "hr.algebra.nasa.data_imported"
@@ -32,8 +33,8 @@ class SplashScreenActivity : AppCompatActivity() {
         } else {
             if (isOnline()) {
                 //remove this
-                startActivity<MainHostActivity>()
-                //   NasaService.enqueue(this)
+             //   startActivity<MainHostActivity>()
+                FakeStoreService.enqueue(this)
             } else {
                 binding.tvSplash.text = getString(R.string.no_internet)
                 callDelayed(DELAY) { finish() }

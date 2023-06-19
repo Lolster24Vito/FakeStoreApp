@@ -15,6 +15,24 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <androidx.drawerlayout.widget.DrawerLayout
+            android:id="@+id/drawerLayout"
+            android:layout_width="222dp"
+            android:layout_height="374dp"
+            android:translationZ="3dp">
+
+            <com.google.android.material.navigation.NavigationView
+                android:id="@+id/navView"
+                android:layout_width="@dimen/navViewWidth"
+                android:layout_height="@dimen/navViewHeight"
+                android:layout_gravity="start"
+                app:headerLayout="@layout/navigation_header"
+                app:itemTextColor="@android:color/darker_gray"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:menu="@menu/navigation_menu" />
+
+        </androidx.drawerlayout.widget.DrawerLayout>
     </FrameLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -24,6 +42,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/bottom_navigation_menu"/>
+        app:menu="@menu/bottom_navigation_menu" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

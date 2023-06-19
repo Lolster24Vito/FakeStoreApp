@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardBackgroundColor="?colorPrimary"
+    app:cardCornerRadius="9dp"
+    app:cardUseCompatPadding="true"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:padding="@dimen/itemsPadding"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/ivItem"
+            android:layout_width="@dimen/ivSize"
+            android:layout_height="@dimen/ivSize"
+            tools:src="@drawable/nasa"/>
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/marginLeft"
+            android:textColor="?colorOnPrimary"
+            android:textSize="@dimen/tvSize"
+            tools:text="Picture of the day" />
+
+        <TextView
+            android:id="@+id/tvPriceNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:textColor="?colorOnPrimary"
+            android:textSize="@dimen/tvSize"
+            tools:text="109.55" />
+        <TextView
+            android:id="@+id/cashSign"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="3dp"
+            android:textColor="?colorOnPrimary"
+            android:textSize="@dimen/tvSize"
+            android:text="$" />
+
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

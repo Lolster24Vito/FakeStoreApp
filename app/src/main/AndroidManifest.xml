@@ -5,8 +5,6 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
-
-
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -17,12 +15,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FakeStoreApp"
         tools:targetApi="31">
+        <activity
+            android:name=".ItemDetailsActivity"
+            android:exported="false" />
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="${MAPS_API_KEY}"/>
-        <activity
-            android:name=".MapsActivity"
-            android:exported="false" />
+            android:value="${MAPS_API_KEY}" />
 
         <receiver
             android:name=".FakeStoreReceiver"
@@ -50,7 +49,11 @@
             </intent-filter>
         </activity>
 
-
+        <provider
+            android:name=".FakeStoreProvider"
+            android:authorities="hr.algebra.fakestoreapp.api.provider"
+            android:enabled="true"
+            android:exported="false" />
     </application>
 
 </manifest>

@@ -19,16 +19,32 @@
             tools:src="@drawable/nasa"/>
 
         <TextView
-            android:textColor="?colorOnPrimary"
-            android:layout_marginLeft="@dimen/marginLeft"
             android:id="@+id/tvTitle"
-            tools:text="Picture of the day"
-            android:textSize="@dimen/tvSize"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_marginLeft="@dimen/marginLeft"
+            android:textColor="?colorOnPrimary"
+            android:textSize="@dimen/tvSize"
+            tools:text="Picture of the day" />
 
-
+        <TextView
+            android:id="@+id/tvPriceNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:textColor="?colorOnPrimary"
+            android:textSize="@dimen/tvSize"
+            tools:text="109.55" />
+        <TextView
+            android:id="@+id/cashSign"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="3dp"
+            android:textColor="?colorOnPrimary"
+            android:textSize="@dimen/tvSize"
+            android:text="$" />
 
 
     </LinearLayout>

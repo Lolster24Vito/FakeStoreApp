@@ -10,7 +10,10 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import hr.algebra.fakestoreapp.FAKESTORE_PROVIDER_CONTENT_URI
+import hr.algebra.fakestoreapp.ItemDetailsActivity
+import hr.algebra.fakestoreapp.POSITION
 import hr.algebra.fakestoreapp.R
+import hr.algebra.fakestoreapp.framework.startActivity
 import hr.algebra.fakestoreapp.model.Item
 import jp.wasabeef.picasso.transformations.RoundedCornersTransformation
 import java.io.File
@@ -20,6 +23,8 @@ class ItemAdapter(private val context: Context, private val items: MutableList<I
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val ivItem = itemView.findViewById<ImageView>(R.id.ivItem)
         private val tvTitle = itemView.findViewById<TextView>(R.id.tvTitle)
+        private val tvPriceNumber = itemView.findViewById<TextView>(R.id.tvPriceNumber)
+
         fun bind(item: Item) {
             Picasso.get()
                 .load(File(item.picturePath))
@@ -27,6 +32,7 @@ class ItemAdapter(private val context: Context, private val items: MutableList<I
                 .transform(RoundedCornersTransformation(50, 5))
                 .into(ivItem)
             tvTitle.text = item.title
+            tvPriceNumber.text=item.price.toString()
         }
     }
 
@@ -47,7 +53,7 @@ class ItemAdapter(private val context: Context, private val items: MutableList<I
             true
         }
         holder.itemView.setOnClickListener {
-          //  context.startActivity<ItemPagerActivity>(POSITION, position)
+            context.startActivity<ItemDetailsActivity>(POSITION, position)
         }
 
         holder.bind(item)

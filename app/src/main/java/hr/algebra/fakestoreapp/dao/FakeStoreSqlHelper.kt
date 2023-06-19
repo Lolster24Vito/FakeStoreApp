@@ -17,6 +17,7 @@ private val CREATE_TABLE = "create table $TABLE_NAME( " +
         "${Item::picturePath.name} text not null, " +
         "${Item::description.name} text not null, " +
         "${Item::rating.name} real not null" +
+        "${Item::bought.name} integer not null" +
         ")"
 private const val DROP_TABLE = "drop table $TABLE_NAME"
 
@@ -48,6 +49,7 @@ class FakeStoreSqlHelper(context: Context?)
         null,
         sortOrder
     )
+
 
     override fun update(values: ContentValues?, selection: String?,
                         selectionArgs: Array<String>?

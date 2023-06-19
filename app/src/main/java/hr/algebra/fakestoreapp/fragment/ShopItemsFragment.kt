@@ -10,6 +10,7 @@ import hr.algebra.fakestoreapp.R
 import hr.algebra.fakestoreapp.adapter.ItemAdapter
 import hr.algebra.fakestoreapp.api.ProductItem
 import hr.algebra.fakestoreapp.databinding.FragmentShopItemsBinding
+import hr.algebra.fakestoreapp.factory.getFakeStoreRepository
 import hr.algebra.fakestoreapp.framework.fetchItems
 import hr.algebra.fakestoreapp.model.Item
 
@@ -25,7 +26,7 @@ class ShopItemsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        items=requireContext().fetchItems()
+            items=requireContext().fetchItems()
         binding= FragmentShopItemsBinding.inflate(inflater,container,false)
         return binding.root
     }

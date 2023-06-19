@@ -82,7 +82,9 @@ fun Context.fetchItems() : MutableList<Item> {
                         cursor.getDouble(cursor.getColumnIndex(Item::price.name)),
                         cursor.getString(cursor.getColumnIndex(Item::picturePath.name)),
                         cursor.getString(cursor.getColumnIndex(Item::description.name)),
-                        cursor.getDouble(cursor.getColumnIndex(Item::rating.name))
+                        cursor.getDouble(cursor.getColumnIndex(Item::rating.name)),
+                        false
+                        //cursor.getInt(cursor.getColumnIndex(Item::bought.name)) == 1
                 ))
         }
 

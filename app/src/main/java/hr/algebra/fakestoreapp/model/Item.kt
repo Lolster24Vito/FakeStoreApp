@@ -6,5 +6,6 @@ data class Item (
     val price: Double,
     val picturePath: String,
     val description: String,
-    val rating:Double
+    val rating:Double,
+    var bought:Boolean
         )

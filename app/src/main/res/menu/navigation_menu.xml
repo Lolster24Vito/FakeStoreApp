@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
+
+        android:title="loginUserEmail"
+        android:id="@+id/menuLoggedInUser"
+        />
+    <item
         android:title="@string/login"
-        android:icon="@drawable/about"
+        android:icon="@drawable/baseline_person_24"
         android:id="@+id/menuLogin" />
     <item
         android:title="@string/register"
-        android:icon="@drawable/about"
+        android:icon="@drawable/baseline_person_24"
         android:id="@+id/menuRegister" />
     <item
         android:title="@string/logout"
-        android:icon="@drawable/about"
+        android:icon="@drawable/baseline_logout_24"
         android:id="@+id/menuLogout" />
 </menu>

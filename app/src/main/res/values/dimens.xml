@@ -12,6 +12,7 @@
     <dimen name="navHeaderWidth">150dp</dimen>
     <dimen name="navHeaderHeight">100dp</dimen>
     <dimen name="navHeaderMarginTop">25dp</dimen>
-    <dimen name="navViewWidth">162dp</dimen>
+    <dimen name="navViewWidth">300dp</dimen>
     <dimen name="navViewHeight">340dp</dimen>
+    <dimen name="marginTop">20dp</dimen>
 </resources>

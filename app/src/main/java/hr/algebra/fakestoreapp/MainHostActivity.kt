@@ -8,27 +8,29 @@ import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import androidx.navigation.ui.NavigationUI
+import com.google.firebase.auth.FirebaseAuth
 import hr.algebra.fakestoreapp.databinding.ActivityMainBinding
 import hr.algebra.fakestoreapp.fragment.AboutFragment
 import hr.algebra.fakestoreapp.fragment.ShopItemsFragment
 import hr.algebra.fakestoreapp.fragment.StoreMapFragment
+import hr.algebra.fakestoreapp.framework.startActivity
 
 class MainHostActivity : AppCompatActivity() {
     private lateinit var binding:ActivityMainBinding
+    private lateinit var firebaseAuth: FirebaseAuth
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding= ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        firebaseAuth = FirebaseAuth.getInstance()
         replaceFragment(ShopItemsFragment())
         initBottomNavigationMenu()
         initHamburgerMenu()
-        initNavigation()
+        initProfileNavigation()
     }
 
-    private fun initNavigation() {
-     //   val navController = Navigation.findNavController(this, R.id.navController)
-      //  NavigationUI.setupWithNavController(binding.navView, navController)
-    }
+
 
     private fun initHamburgerMenu() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
@@ -51,6 +53,20 @@ class MainHostActivity : AppCompatActivity() {
         fragmentTransaction.replace(R.id.frame_layout,fragment)
         fragmentTransaction.commit()
     }
+    private fun initProfileNavigation(){
+        binding.navView.setNavigationItemSelectedListener {
+            when(it.itemId){
+                R.id.menuLogin->startActivity<LoginActivity>()
+                R.id.menuRegister->startActivity<RegisterActivity>()
+                R.id.menuLogout->{
+                    firebaseAuth.signOut()
+                    binding.navView.menu.getItem(0).title=""
+                }
+
+            }
+            true
+        }
+    }
 /*
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.navigation_menu,menu)
@@ -72,6 +88,14 @@ class MainHostActivity : AppCompatActivity() {
             binding.drawerLayout.closeDrawers()
         } else {
             binding.drawerLayout.openDrawer(GravityCompat.START)
+            setLoggedInUserText()
+        }
+    }
+
+    private fun setLoggedInUserText() {
+        val user=firebaseAuth.currentUser
+        user?.let {
+            binding.navView.menu.getItem(0).title=user.email
         }
     }
 }

@@ -28,8 +28,9 @@ class LoginActivity : AppCompatActivity() {
                         // val intent = Intent(this, LoginActivity::class.java)
                         // startActivity(intent)
                         Toast.makeText(this, "login success", Toast.LENGTH_SHORT).show()
+                        startActivity<MainHostActivity>()
                     } else {
-                        Toast.makeText(this, it.exception.toString(), Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, "Error:"+it.exception.toString(), Toast.LENGTH_SHORT).show()
                     }
 
                 }

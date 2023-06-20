@@ -17,7 +17,6 @@ private val CREATE_TABLE = "create table $TABLE_NAME( " +
         "${Item::picturePath.name} text not null, " +
         "${Item::description.name} text not null, " +
         "${Item::rating.name} real not null" +
-        "${Item::bought.name} integer not null" +
         ")"
 private const val DROP_TABLE = "drop table $TABLE_NAME"
 
@@ -35,8 +34,9 @@ class FakeStoreSqlHelper(context: Context?)
     override fun delete(selection: String?, selectionArgs: Array<String>?) =
         writableDatabase.delete(TABLE_NAME, selection, selectionArgs)
 
-    override fun insert(values: ContentValues?) =
-        writableDatabase.insert(TABLE_NAME, null, values)
+    override fun insert(values: ContentValues?): Long {
+        return writableDatabase.insert(TABLE_NAME, null, values)
+    }
 
     override fun query(projection: Array<String>?, selection: String?,
                        selectionArgs: Array<String>?, sortOrder: String?

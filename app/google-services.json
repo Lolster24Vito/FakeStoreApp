@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "736289169051",
+    "project_id": "nasagradeauth",
+    "storage_bucket": "nasagradeauth.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:736289169051:android:41fda2a4b20a24c32cb03e",
+        "android_client_info": {
+          "package_name": "hr.algebra.fakestoreapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "736289169051-03cc28r4mfj0ftuh2m1dqgdfvudo6pkf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA8TPHe8CazYFt-DGIDCp2wx09okmK_Akk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "736289169051-03cc28r4mfj0ftuh2m1dqgdfvudo6pkf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:736289169051:android:1316861738f680ce2cb03e",
+        "android_client_info": {
+          "package_name": "hr.algebra.nasa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "736289169051-03cc28r4mfj0ftuh2m1dqgdfvudo6pkf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA8TPHe8CazYFt-DGIDCp2wx09okmK_Akk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "736289169051-03cc28r4mfj0ftuh2m1dqgdfvudo6pkf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

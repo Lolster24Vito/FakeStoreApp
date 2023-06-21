@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -26,6 +27,8 @@ class ItemDetailsAdapter (private val context: Context, private val items: Mutab
         private val tvTitle = itemView.findViewById<TextView>(R.id.tvTitle)
         private val tvPriceNumber = itemView.findViewById<TextView>(R.id.tvPriceNumber)
         private val tvDesciption = itemView.findViewById<TextView>(R.id.tvDescription)
+         val etRating = itemView.findViewById<EditText>(R.id.etRating)
+         val btnUpdateRating = itemView.findViewById<Button>(R.id.btnUpdateRating)
 
 
         fun bind(item: Item) {
@@ -37,6 +40,8 @@ class ItemDetailsAdapter (private val context: Context, private val items: Mutab
             tvTitle.text = item.title
             tvPriceNumber.text = item.price.toString()+" $"
             tvDesciption.text = item.description
+            etRating.setText(item.rating.toString())
+
             //btnBuy.setText(if(item.bought) "unbuy" else "buy")
 
             //ivRead.setImageResource(if(item.read) R.drawable.green_flag else R.drawable.red_flag)
@@ -55,6 +60,19 @@ class ItemDetailsAdapter (private val context: Context, private val items: Mutab
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = items[position]
 
+        holder.btnUpdateRating.setOnClickListener {
+            val newRating = holder.etRating.text.toString().toDouble()
+
+            context.contentResolver.update(
+                ContentUris.withAppendedId(FAKESTORE_PROVIDER_CONTENT_URI,item._id!!),
+                ContentValues().apply {
+                    put(Item::rating.name,newRating)
+                },
+                null, null
+            )
+            items[position].rating=newRating
+            notifyItemChanged(position)
+        }
 /*        holder.btnBuy.setOnClickListener {
             // update
             item.bought = !item.bought

@@ -15,4 +15,6 @@
     <dimen name="navViewWidth">300dp</dimen>
     <dimen name="navViewHeight">340dp</dimen>
     <dimen name="marginTop">20dp</dimen>
+    <dimen name="textSizeOutOf5">20dp</dimen>
+    <dimen name="updateRatingLeftMargin">20dp</dimen>
 </resources>
